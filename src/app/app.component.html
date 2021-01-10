@@ -1,6 +1,6 @@
 <div class="container">
   <header>
-    <h1>{{title}} - Counter</h1>
+    <h1>Basic Counter App</h1>
   </header>
 
   <main>
@@ -10,5 +10,5 @@
   <button (click)="handleReset()">Reset Count</button>
   <button (click)="handleIncrease()">Increase Count</button>
   <button (click)="handleDecrease()">Decrease Count</button>
-  <p>{{error}}</p>
+  <p *ngIf="status">{{error}}</p>
 </div>

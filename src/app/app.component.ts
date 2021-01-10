@@ -8,15 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularfirst';
   error = '';
+  status = 'false';
 
-  count: number = 1000;
+  count = 10;
+
+  displayErr = (pos: any) => {
+    this.status = pos;
+  };
   handleIncrease = () => {
-    this.count = this.count + 10;
+    this.displayErr(false);
+    this.count = this.count + 1;
   };
 
   handleDecrease = () => {
     if (this.count === 0) {
-      console.log("Can't Decrease");
+      this.error = "Can't Decrement";
+      this.displayErr(true);
     } else {
       this.count = this.count - 1;
     }
